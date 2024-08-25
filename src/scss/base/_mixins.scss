@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+//para crear código repetitivo y utilizarlo en diferentes partes del proyecto
+@mixin phone{
+    @media (min-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+
+@mixin desktopXl{
+    @media (min-width: v.$desktopXl) {
+        @content;
+    }
+}
+
+@mixin grid($columnas, $gap){
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $gap;
+}
+
+@mixin reset-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
